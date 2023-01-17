@@ -8,7 +8,7 @@ import {GiEvilBook} from 'react-icons/gi'
 const Nav = () => {
   return (
     <nav>
-      <a href="#"><BiHomeAlt /> Home</a>
+      <a href="#" className='active'><BiHomeAlt /> Home</a>
       <a href="#about"><BiUser /> About</a>
       <a href="#experiences"><BiBook /> Experience</a>
       <a href="#portfolio"><GiEvilBook /> Portfolio</a>
