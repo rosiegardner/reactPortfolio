@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './nav.css'
 import {BiHomeAlt, BiUser, BiBook, BiMessageSquareDetail} from 'react-icons/bi'
 import {GiEvilBook} from 'react-icons/gi'
@@ -6,13 +6,35 @@ import {GiEvilBook} from 'react-icons/gi'
 // import {AiOutlineMessage} from 'react-icons/ai'
 
 const Nav = () => {
+  const [activeNav, setActiveNav] = useState('#')
+
   return (
     <nav>
-      <a href="#" className='active'><BiHomeAlt /> Home</a>
-      <a href="#about"><BiUser /> About</a>
-      <a href="#experiences"><BiBook /> Experience</a>
-      <a href="#portfolio"><GiEvilBook /> Portfolio</a>
-      <a href="#contact"><BiMessageSquareDetail /> Contact</a>
+      <a href="#" 
+        onClick={() => setActiveNav('#')}
+        className={activeNav === '#' ? 'active' : ''}>
+          <BiHomeAlt /> Home
+      </a>
+      <a href="#about" 
+        onClick={() => setActiveNav('#about')} 
+        className={activeNav === '#about' ? 'active' : ''}> 
+          <BiUser /> About
+      </a>
+      <a href="#experience"
+        onClick={() => setActiveNav('#experience')} 
+        className={activeNav === '#experience' ? 'active' : ''}>
+          <BiBook /> Experience
+      </a>
+      <a href="#portfolio"
+        onClick={() => setActiveNav('#portfolio')} 
+        className={activeNav === '#portfolio' ? 'active' : ''}>
+          <GiEvilBook /> Portfolio
+      </a>
+      <a href="#contact"
+        onClick={() => setActiveNav('#contact')} 
+        className={activeNav === '#contact' ? 'active' : ''}>
+          <BiMessageSquareDetail /> Contact
+      </a>
       
     </nav>
   )
